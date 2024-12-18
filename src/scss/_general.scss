@@ -1,0 +1,23 @@
+* {
+  color: $font-dark;
+  font-family: Arial, Helvetica, sans-serif;
+}
+body {
+  margin: 0;
+}
+.mr-5 {
+  margin-right: 5px;
+}
+.d-flex {
+  display: flex;
+}
+.flex-1 {
+  flex: 1;
+}
+.flex-auto {
+  flex: 0 0 auto;
+}
+h1,
+h2 {
+  margin-top: 0;
+}

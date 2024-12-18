@@ -1,0 +1,103 @@
+@import "variables";
+@import "mixins";
+@import "general";
+.moviestore-container {
+  display: flex;
+  gap: 20px;
+  .sort-search-section {
+    padding: 15px 10px 15px 10px;
+    border-bottom: 1px solid $secondary-color;
+    select {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      text-indent: 1px;
+      text-overflow: "";
+      padding: 5px 4px 5px 4px;
+      border-radius: 5px;
+      color: $primary-color;
+      @include border(1px, solid, $primary-color, 5px);
+    }
+    button {
+      padding: 5px 6px;
+      background: #fff;
+      @include border(1px, solid, $secondary-color, 5px);
+    }
+    .search-bar {
+      position: relative;
+      display: flex;
+      flex: 1;
+      input {
+        flex: 1;
+        padding: 3px 5px 3px 25px;
+        background: #fff;
+        @include border(1px, solid, $secondary-color, 5px);
+      }
+      img {
+        position: absolute;
+        left: 0;
+        width: 12px;
+        top: 6px;
+        left: 5px;
+      }
+    }
+  }
+  .movie-list {
+    flex: 0 0 50%;
+    border-right: 1px solid $secondary-color;
+    min-height: 100vh;
+    table {
+      width: 100%;
+      tr {
+        cursor: pointer;
+        td {
+          padding: 8px;
+          border-bottom: 1px solid $secondary-color;
+        }
+      }
+    }
+  }
+  .ratings img,
+  .movie-description .ratings img {
+    margin-right: 5px;
+    width: 16px;
+    height: 16px;
+  }
+  .movie-description {
+    box-sizing: border-box;
+    padding: 16px;
+    flex: "0 0 50%";
+    h2 {
+      font-size: 16px;
+    }
+    .agency-ratings {
+      margin-top: 14px;
+      label {
+        color: $primary-color;
+      }
+      span {
+        color: $primary-color;
+        padding: 4px 14px 7px 14px;
+        display: inline-block;
+        margin-right: 8px;
+        @include border(1px, solid, $primary-color, 20px);
+      }
+    }
+    img {
+      width: 180px;
+      height: 250px;
+      margin-right: 10px;
+    }
+    p {
+      margin: 0;
+    }
+    .close-icon {
+      display: none;
+    }
+    .directed-by {
+      margin-top: 20px;
+      margin-bottom: 20px;
+      display: block;
+    }
+  }
+}
+@import "media";
