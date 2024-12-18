@@ -3,6 +3,8 @@ import MovieList, { MovieListProps } from "./components/MovieList.tsx";
 import MovieDescription from "./components/MovieDescription.tsx";
 import "./scss/main.scss";
 import SortAndSearch from "./components/SortAndSearch.tsx";
+import { AppState } from "redux/types.ts";
+import { useSelector } from "react-redux";
 
 const App: React.FC = () => {
   const [sortBy, setSortBy] = useState<MovieListProps["sortBy"]>(null);
@@ -10,6 +12,7 @@ const App: React.FC = () => {
     useState<MovieListProps["sortOrder"]>("ASC");
   const [searchText, setSearchText] =
     useState<MovieListProps["searchText"]>(null);
+  const selectedMovie = useSelector((state: AppState) => state.selectedMovie);
   return (
     <div className="app moviestore-container">
       <div className="flex-1">
@@ -25,7 +28,11 @@ const App: React.FC = () => {
             searchText={searchText}
             sortOrder={sortOrder}
           />
-          <MovieDescription />
+          {selectedMovie ? (
+            <MovieDescription />
+          ) : (
+            <p className="no-movie">Select a movie to see its description</p>
+          )}
         </div>
       </div>
     </div>

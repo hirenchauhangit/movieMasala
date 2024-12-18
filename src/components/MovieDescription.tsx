@@ -17,7 +17,7 @@ const MovieDescription: React.FC = () => {
       <div className="close-icon" onClick={handleDeselectMovie}>
         <img src={close} className="close" alt="close" />
       </div>
-      {selectedMovie ? (
+      {selectedMovie && (
         <>
           <h2>{selectedMovie.title}</h2>
           <div>
@@ -48,8 +48,6 @@ const MovieDescription: React.FC = () => {
             </div>
           </div>
         </>
-      ) : (
-        <p>Select a movie to see its description</p>
       )}
     </div>
   );

@@ -4,6 +4,9 @@
 .moviestore-container {
   display: flex;
   gap: 20px;
+  .no-movie {
+    padding-left: 16px;
+  }
   .sort-search-section {
     padding: 15px 10px 15px 10px;
     border-bottom: 1px solid $secondary-color;
